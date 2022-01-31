@@ -1,8 +1,8 @@
-package com.yarkin.careerguidance.web;
+package com.yarkin.careerguidance.repository;
 
 import com.yarkin.careerguidance.entity.exam.Exam;
 import java.util.List;
 
-public interface ExamController {
+public interface ExamRepository {
     List<Exam> findAll();
 }
