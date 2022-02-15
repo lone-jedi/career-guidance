@@ -1,8 +1,6 @@
 package com.yarkin.careerguidance.web;
 
-import com.yarkin.careerguidance.entity.Answer;
-import com.yarkin.careerguidance.entity.Question;
-import com.yarkin.careerguidance.entity.Test;
+import com.yarkin.careerguidance.entity.*;
 import com.yarkin.careerguidance.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -65,6 +63,38 @@ public class TestControllerTest {
                 .andExpect(jsonPath("$.questions[0].answers[0].title").value("A11"))
                 .andExpect(jsonPath("$.questions[0].answers[2].weight").value(0.2))
                 .andExpect(jsonPath("$.questions[1].answers", hasSize(3)));
+    }
+
+    @org.junit.jupiter.api.Test
+    public void geMainTestResult() {
+        List<Cathedra> onaftCathedraList = List.of(
+                new Cathedra(1,"Право", ""),
+                new Cathedra(2,"Комп техн", ""),
+                new Cathedra(3,"Хор :))", "")
+        );
+
+        List<Cathedra> onuCathedraList = List.of(
+                new Cathedra(4,"Народний хор :))", ""),
+                new Cathedra(5,"Скульптурологія", "")
+        );
+
+        List<University> musicUniversities = List.of(
+                new University(1, "Мечникова", "", 4342, "", "Ukraine, Odessa", onuCathedraList),
+                new University(1, "ОНАХТ", "", 4342, "", "Ukraine, Odessa", onaftCathedraList)
+        );
+
+        List<University> artUniversities = List.of(
+            new University(1, "Мечникова", "", 4342, "", "Ukraine, Odessa", onuCathedraList)
+        );
+
+        List<Specialty> specialties = List.of(
+            new Specialty(1, "Музика", "", musicUniversities),
+            new Specialty(2, "Мистецтво", "", artUniversities)
+        );
+
+        Result expected = new Result(1, "Гуманітарій", "Круто!", 10, 19, specialties);
+
+        // TODO finish geMainTestResult test: create asserts!
     }
 
 }
