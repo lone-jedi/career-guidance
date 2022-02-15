@@ -1,4 +1,4 @@
-package com.yarkin.careerguidance.web.exam;
+package com.yarkin.careerguidance.web.test;
 
 import com.yarkin.careerguidance.entity.Result;
 import com.yarkin.careerguidance.entity.Test;
