@@ -1,7 +1,7 @@
 --
--- ZNO exams table
+-- ZNO exam table
 --
-CREATE TABLE exams(
+CREATE TABLE exam(
 	id SERIAL PRIMARY KEY,
 	title VARCHAR(255) NOT NULL,
 	description TEXT,
@@ -155,7 +155,7 @@ INSERT INTO answer(title, weight, question_id) VALUES
 
 ('Так', 6, 5),
 ('Важко сказати', 3, 5),
-('Ні', 1, 5),
+('Ні', 1, 5);
 
 INSERT INTO exam(title, description) VALUES
 ('Українська мова', ''),
@@ -210,4 +210,4 @@ INSERT INTO cathedra(title, description, university_id, specialty_id) VALUES
 ('Мережеві технології', '1112222222', 2, 6),
 ('Міжнародне право', '2223333333', 2, 5),
 ('Мистецтво', '4444', 1, 2),
-('Література', '5555', 1, 3),
+('Література', '5555', 1, 3);
