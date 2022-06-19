@@ -1,6 +1,7 @@
 package com.yarkin.careerguidance.service.test;
 
 import com.yarkin.careerguidance.entity.Result;
+import com.yarkin.careerguidance.entity.ResultFull;
 import com.yarkin.careerguidance.entity.Test;
 import com.yarkin.careerguidance.repository.TestRepository;
 import com.yarkin.careerguidance.service.TestService;
@@ -27,5 +28,11 @@ public class DefaultTestService implements TestService {
     @Override
     public Result getMainTestResult(double score) {
         return testRepository.getTestResult(DEFAULT_MAIN_CAREER_TEST_ID, score);
+    }
+
+    @Override
+    public ResultFull getMainTestResult(int[] answerIds)
+    {
+        return testRepository.getTestResult(DEFAULT_MAIN_CAREER_TEST_ID, answerIds);
     }
 }

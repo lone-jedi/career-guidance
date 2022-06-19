@@ -11,7 +11,7 @@ import java.util.Objects;
 @Builder
 @AllArgsConstructor
 public class University {
-    private int id;
+    private int universityId;
     private String title;
     private String description;
     private double rate;
@@ -24,11 +24,11 @@ public class University {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         University that = (University) object;
-        return id == that.id;
+        return universityId == that.getUniversityId();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(universityId);
     }
 }

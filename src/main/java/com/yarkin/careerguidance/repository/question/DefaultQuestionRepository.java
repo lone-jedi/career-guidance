@@ -21,10 +21,10 @@ public class DefaultQuestionRepository implements QuestionRepository {
     @Override
     public List<Question> getByTestIdWithAnswers(int testId) {
         return jdbcTemplate.query("""
-                        SELECT question.id AS q_id, question.title AS q_title,
-                        	   answer.id AS a_id, answer.title AS a_title, weight
+                        SELECT question.question_id AS q_id, question.title AS q_title,
+                        	   answer.answer_id AS a_id, answer.title AS a_title, weight
                         FROM question
-                        LEFT JOIN answer ON question.id = question_id 
+                        LEFT JOIN answer USING (question_id)
                         WHERE question.test_id = :id;""",
                 Map.of("id", testId), ANSWER_EXTRACTOR);
     }

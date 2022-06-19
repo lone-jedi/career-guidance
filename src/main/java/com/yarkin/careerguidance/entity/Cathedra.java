@@ -8,7 +8,7 @@ import java.util.Objects;
 @Getter
 @AllArgsConstructor
 public class Cathedra {
-    private int id;
+    private int cathedraId;
     private String title;
     private String description;
 
@@ -17,11 +17,11 @@ public class Cathedra {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         Cathedra cathedra = (Cathedra) object;
-        return id == cathedra.id;
+        return cathedraId == cathedra.cathedraId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(cathedraId);
     }
 }

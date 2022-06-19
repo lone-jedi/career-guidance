@@ -3,8 +3,10 @@ package com.yarkin.careerguidance.repository.extractor;
 import com.yarkin.careerguidance.entity.Cathedra;
 import com.yarkin.careerguidance.entity.Specialty;
 import com.yarkin.careerguidance.entity.University;
+import com.yarkin.careerguidance.entity.UniversityFull;
 import com.yarkin.careerguidance.repository.mapper.CathedraRowMapper;
 import com.yarkin.careerguidance.repository.mapper.SpecialtyRowMapper;
+import com.yarkin.careerguidance.repository.mapper.UniversityOneRowMapper;
 import com.yarkin.careerguidance.repository.mapper.UniversityRowMapper;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
@@ -15,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SpecialtyExtractor implements ResultSetExtractor<List<Specialty>> {
-    private final UniversityRowMapper universityRowMapper = new UniversityRowMapper();
+    private final UniversityOneRowMapper universityRowMapper = new UniversityOneRowMapper();
     private final CathedraRowMapper cathedraRowMapper = new CathedraRowMapper();
     private final SpecialtyRowMapper specialtyRowMapper = new SpecialtyRowMapper();
 
@@ -34,7 +36,7 @@ public class SpecialtyExtractor implements ResultSetExtractor<List<Specialty>> {
                 lastUniversityListId = -1;
             }
 
-            University university = universityRowMapper.mapRow(resultSet, -1);
+            UniversityFull university = universityRowMapper.mapRow(resultSet, -1);
 
             if (!specialties.get(lastSpecialtyListId).getUniversities().contains(university)) {
                 specialties.get(lastSpecialtyListId).getUniversities().add(university);

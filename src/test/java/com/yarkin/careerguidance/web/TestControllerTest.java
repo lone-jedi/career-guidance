@@ -78,13 +78,13 @@ public class TestControllerTest {
                 new Cathedra(5,"Скульптурологія", "")
         );
 
-        List<University> musicUniversities = List.of(
-                new University(1, "Мечникова", "", 4342, "", "Ukraine, Odessa", onuCathedraList),
-                new University(1, "ОНАХТ", "", 4342, "", "Ukraine, Odessa", onaftCathedraList)
+        List<UniversityFull> musicUniversities = List.of(
+                new UniversityFull(1, "Мечникова", "", 4342, "", "Ukraine, Odessa", "", onuCathedraList),
+                new UniversityFull(1, "ОНАХТ", "", 4342, "", "Ukraine, Odessa", "", onaftCathedraList)
         );
 
-        List<University> artUniversities = List.of(
-            new University(1, "Мечникова", "", 4342, "", "Ukraine, Odessa", onuCathedraList)
+        List<UniversityFull> artUniversities = List.of(
+            new UniversityFull(1, "Мечникова", "", 4342, "", "Ukraine, Odessa", "", onuCathedraList)
         );
 
         List<Specialty> specialties = List.of(
@@ -92,7 +92,7 @@ public class TestControllerTest {
             new Specialty(2, "Мистецтво", "", artUniversities)
         );
 
-        Result expected = new Result(1, "Гуманітарій", "Круто!", 10, 19, specialties);
+        // Result expected = new Result(1, "Гуманітарій", "Круто!", 10, 19, specialties);
 
         // TODO finish geMainTestResult test: create asserts!
     }

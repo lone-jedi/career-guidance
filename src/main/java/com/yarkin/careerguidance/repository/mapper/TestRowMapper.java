@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class TestRowMapper implements RowMapper<Test> {
     @Override
     public Test mapRow(ResultSet resultSet, int rowNumber) throws SQLException {
-        int id = resultSet.getInt("id");
+        int id = resultSet.getInt("test_id");
         String title = resultSet.getString("title");
         String description = resultSet.getString("description");
 

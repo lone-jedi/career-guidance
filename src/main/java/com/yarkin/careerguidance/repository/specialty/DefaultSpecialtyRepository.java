@@ -19,22 +19,26 @@ public class DefaultSpecialtyRepository implements SpecialtyRepository {
     @Override
     public List<Specialty> getAllByResultId(int resultId) {
         List<Specialty> specialties = jdbcTemplate.query(
-                      " SELECT university.id AS u_id,                             "
-                        + "        university.title AS u_title,                       "
-                        + "        university.description AS u_description,           "
-                        + "        university.logo AS u_logo,                         "
-                        + "        university.rate, university.location,              "
-                        + "        cathedra.id AS c_id,                               "
-                        + "        cathedra.title AS c_title,                         "
-                        + "        cathedra.description AS c_description,             "
-                        + "        specialty.id AS s_id,                              "
-                        + "        specialty.title AS s_title,                        "
-                        + "        specialty.description AS s_description             "
-                        + " FROM cathedra                                             "
-                        + " JOIN university ON university.id = cathedra.university_id "
-                        + " JOIN specialty  ON cathedra.specialty_id = specialty.id   "
-                        + " JOIN result_specialty ON result_specialty.result_id = :id "
-                        + "        AND specialty.id = result_specialty.specialty_id   ",
+                      " SELECT university.university_id,                                 "
+                        + "        university.title ,                              "
+                        + "        university.description ,                  "
+                        + "        university.logo ,                                "
+                        + "        university.rate, university.location, university.website, "
+                        + "        cathedra.cathedra_id AS c_id,                             "
+                        + "        cathedra.title AS c_title,                                "
+                        + "        cathedra.description AS c_description,                    "
+                        + "        specialty.specialty_id AS s_id,                           "
+                        + "        specialty.title AS s_title,                               "
+                        + "        specialty.description AS s_description                    "
+                        + " FROM cathedra                                                    "
+                        + " JOIN university                                                  "
+                        + "  ON university.university_id = cathedra.university_id            "
+                        + " JOIN cathedra_specialty                                          "
+                        + "   ON cathedra.cathedra_id = cathedra_specialty.cathedra_id       "
+                        + " JOIN specialty                                                   "
+                        + "   ON specialty.specialty_id = cathedra_specialty.specialty_id    "
+                        + " JOIN result_specialty ON result_specialty.result_id = :id        "
+                        + "   AND specialty.specialty_id = result_specialty.specialty_id     ",
                 Map.of("id", resultId), SPECIALTY_EXTRACTOR);
 
         return specialties;

@@ -10,9 +10,10 @@ import java.util.List;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class Result {
-    private final int id;
+    private final int resultId;
     private final String title;
     private final String description;
+    private int answersCount;
     private double scoreFrom;
     private double scoreTo;
     List<Specialty> specialties;

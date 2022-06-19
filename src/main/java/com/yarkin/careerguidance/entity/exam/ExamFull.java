@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 public class ExamFull extends ExamWithDescription {
     private LocalDateTime creationDate;
 
-    public ExamFull(int id, String title, String description, LocalDateTime creationDate) {
-        super(id, title, description);
+    public ExamFull(int examId, String title, String description, LocalDateTime creationDate) {
+        super(examId, title, description);
         this.creationDate = creationDate;
     }
 }

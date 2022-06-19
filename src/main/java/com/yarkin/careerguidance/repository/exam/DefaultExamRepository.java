@@ -18,6 +18,6 @@ public class DefaultExamRepository implements ExamRepository {
 
     @Override
     public List<Exam> findAll() {
-        return jdbcTemplate.query("SELECT id, title FROM exams;", EXAM_ROW_MAPPER);
+        return jdbcTemplate.query("SELECT exam_id, title FROM exam;", EXAM_ROW_MAPPER);
     }
 }

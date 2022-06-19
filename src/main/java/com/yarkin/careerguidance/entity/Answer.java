@@ -6,7 +6,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class Answer {
-    private int id;
+    private int answerId;
     private String title;
     private double weight;
 }

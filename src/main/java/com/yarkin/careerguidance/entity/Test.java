@@ -8,13 +8,13 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 public class Test {
-    private int id;
+    private int testId;
     private String title;
     private String description;
     private List<Question> questions;
 
-    public Test(int id, String title, String description) {
-        this.id = id;
+    public Test(int testId, String title, String description) {
+        this.testId = testId;
         this.title = title;
         this.description = description;
     }

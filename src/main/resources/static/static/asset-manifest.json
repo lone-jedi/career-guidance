@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6ccd7757.css",
+    "main.js": "/static/js/main.76af78b5.js",
+    "static/media/slide2.png": "/static/media/slide2.c3092bdc158ca17dd06e.png",
+    "static/media/slide3.jpg": "/static/media/slide3.e95c216ec6663b7e7430.jpg",
+    "static/media/bg.jpg": "/static/media/bg.80c4e5d495107a37479b.jpg",
+    "static/media/slide1.jpg": "/static/media/slide1.288ee4045bed60b469ac.jpg",
+    "static/media/onaft.png": "/static/media/onaft.3a2fa32d4cf5cc9ac688.png",
+    "static/media/main_logo.png": "/static/media/main_logo.aa15990cd026fe5cff12.png",
+    "index.html": "/index.html",
+    "main.6ccd7757.css.map": "/static/css/main.6ccd7757.css.map",
+    "main.76af78b5.js.map": "/static/js/main.76af78b5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ccd7757.css",
+    "static/js/main.76af78b5.js"
+  ]
+}

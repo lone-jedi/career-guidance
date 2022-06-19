@@ -1,6 +1,7 @@
 package com.yarkin.careerguidance.web.test;
 
 import com.yarkin.careerguidance.entity.Result;
+import com.yarkin.careerguidance.entity.ResultFull;
 import com.yarkin.careerguidance.entity.Test;
 import com.yarkin.careerguidance.service.TestService;
 import com.yarkin.careerguidance.web.TestController;
@@ -23,5 +24,12 @@ public class DefaultTestController implements TestController {
     @GetMapping("/main/result/{score}")
     public Result getMainTestResult(@PathVariable double score) {
         return testService.getMainTestResult(score);
+    }
+
+    @Override
+    @PostMapping("/main/result")
+    public ResultFull getMainTestResult(@RequestBody int[] answerIds)
+    {
+        return testService.getMainTestResult(answerIds);
     }
 }

@@ -1,6 +1,5 @@
 package com.yarkin.careerguidance.repository.mapper;
 
-import com.yarkin.careerguidance.entity.Cathedra;
 import com.yarkin.careerguidance.entity.University;
 import org.springframework.jdbc.core.RowMapper;
 

@@ -11,8 +11,8 @@ public class ExamWithDescription extends Exam {
         this.description = description;
     }
 
-    public ExamWithDescription(int id, String title, String description) {
-        super(id, title);
+    public ExamWithDescription(int examId, String title, String description) {
+        super(examId, title);
         this.description = description;
     }
 }

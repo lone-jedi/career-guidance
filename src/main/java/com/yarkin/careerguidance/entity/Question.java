@@ -11,7 +11,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class Question {
-    private final int id;
+    private final int questionId;
     private final String title;
     private List<Answer> answers;
 
@@ -27,11 +27,11 @@ public class Question {
 
         Question question = (Question) object;
 
-        return id == question.id;
+        return questionId == question.questionId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(questionId);
     }
 }
