@@ -28,8 +28,7 @@ public class DefaultTestController implements TestController {
 
     @Override
     @PostMapping("/main/result")
-    public ResultFull getMainTestResult(@RequestBody int[] answerIds)
-    {
+    public ResultFull getMainTestResult(@RequestBody int[] answerIds) {
         return testService.getMainTestResult(answerIds);
     }
 }

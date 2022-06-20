@@ -20,9 +20,9 @@ public class DefaultSpecialtyRepository implements SpecialtyRepository {
     public List<Specialty> getAllByResultId(int resultId) {
         List<Specialty> specialties = jdbcTemplate.query(
                       " SELECT university.university_id,                                 "
-                        + "        university.title ,                              "
-                        + "        university.description ,                  "
-                        + "        university.logo ,                                "
+                        + "        university.title ,                                        "
+                        + "        university.description ,                                  "
+                        + "        university.logo ,                                         "
                         + "        university.rate, university.location, university.website, "
                         + "        cathedra.cathedra_id AS c_id,                             "
                         + "        cathedra.title AS c_title,                                "
